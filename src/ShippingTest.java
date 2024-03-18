@@ -34,7 +34,14 @@ public class ShippingTest
         // dollars of insurance using the addMoreInsurance method BEFORE
         // adding its costs to the total. The print command below should
         // print out 345.0 if your code is correct!
-
+        for(ShippingItem item : itemList)
+        {
+            totalCost += item.getCost();
+            if(item instanceof InsuredShippingItem)
+            {
+                totalCost += 30;
+            }
+        }
 
         System.out.println(totalCost);
     }
